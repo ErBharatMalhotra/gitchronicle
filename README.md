@@ -1,83 +1,133 @@
-# Project PRD: GitChronicle 📊
-> **The Real-Time Developer Intelligence & Benchmark Dashboard**
-> *Zero Setup · Rate-Limit Immune · Actionable Developer DNA*
+<div align="center">
+
+# GitChronicle 📊
+### Real-Time Developer Intelligence & Percentile Benchmark Observatory
+
+[![Website](https://img.shields.io/badge/Live_Observatory-gitchronicle.bharatdn.com-58a6ff?style=for-the-badge&logo=vercel)](https://gitchronicle.bharatdn.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-3fb950?style=for-the-badge)](LICENSE)
+[![Next.js 15](https://img.shields.io/badge/Next.js-15_(App_Router)-white?style=for-the-badge&logo=nextdotjs)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com)
+
+<p align="center">
+  <b>Instant Profile Ingestion · Single-Point GraphQL Query · 6hr Edge Cache · Rate-Limit Immune</b>
+</p>
+
+[**Explore Live Dashboard**](https://gitchronicle.bharatdn.com) · [**Dev vs Dev Matrix**](https://gitchronicle.bharatdn.com/compare) · [**Get Profile Badge**](https://gitchronicle.bharatdn.com/u/ErBharatMalhotra)
 
 ---
 
-## 1. Executive Summary & Value Proposition
-Existing GitHub analytics either cater to macro open-source ecosystems (`OSSInsight`), or are static markdown badges (`github-readme-stats`). 
+</div>
 
-**GitChronicle** is a modern, web-first developer observatory. Any developer enters their GitHub username (or connects via OAuth) and instantly receives:
-1. **Global Percentile Benchmarks** (e.g., *Top 4% active TypeScript committers globally*).
-2. **Developer DNA & Work Cadence** (Night owl vs. early bird, churn velocity, PR turnaround speed).
-3. **Repository Health Index** (Automated hygiene scores: test coverage badges, stale issues, release frequency, license audit).
-4. **Interactive Shareable Dossier** (Clean, ad-free, watermark-free web portfolio link: `gitchronicle.dev/username`).
+## 💡 Overview
 
----
+**GitChronicle** is a high-performance developer intelligence and percentile benchmark dashboard. Enter any GitHub username to instantly discover:
 
-## 2. Market Gap & Competitor Differentiation
-
-| Competitor | Their Flaw | GitChronicle Edge |
-|---|---|---|
-| **github-readme-stats** (80k ⭐) | Unmaintained, frequent Vercel rate-limit crashes, only renders static SVGs for README. | Web-first interactive dashboard with deep insights, caching layer, and drill-down analytics. |
-| **OSSInsight** (2.5k ⭐) | Focuses on global repo trends / macro metrics. Not tailored for individual dev careers. | Hyper-personalized dev scorecard, percentile rankings, and portfolio generator. |
-| **lowlighter/metrics** (17k ⭐) | Requires complex GitHub Actions YAML configuration. Non-interactive. | Zero setup: Enter username or 1-click OAuth. Zero YAML required. |
-| **GitWrapped** | Only active 2 weeks in December. | 365-day live continuous developer growth tracking. |
+- 🏆 **Global Percentile Benchmarks:** Exact global ranking across active developers globally (Top 1%, Top 5%, Top 15%, Top 35%, Top 50%).
+- ⚡ **Cadence Rhythm Matrix:** 7-day × 24-hour activity distribution heatmap revealing your developer archetype (*Early Bird*, *Midday Sprinter*, *Midnight Hacker*, *All-Day Architect*).
+- 🛡️ **Repository Health Index:** Automated hygiene audits (0–100) scoring license validity, commit freshness, issue resolution speed, and documentation quality.
+- 🎯 **Language Mastery:** Multi-dimensional radar charts and exact byte distributions across your public work.
+- ⚔️ **Dev vs Dev Comparison:** Side-by-side battle matrix comparing two developer profiles across 6 key engineering dimensions.
 
 ---
 
-## 3. Core Features & Functional Specs
+## ⚡ Architectural Highlights
 
-### Phase 1: MVP (Days 1 - 7)
-- **Instant Profile Ingestion:**
-  - Public GitHub REST + GraphQL API querying for user details, public repos, language distribution, and commit calendar.
-- **The Developer DNA Matrix:**
-  - *Productivity Rhythm:* Day-of-week & hour-of-day heatmap (Early Bird / Midday Sprinter / Midnight Hacker).
-  - *Language Mastery:* Dynamic wheel / radar chart showing language split by bytes and recent activity.
-  - *Impact Metrics:* PR acceptance rate, Issue resolution time, Review turnaround speed.
-- **Global Percentile Benchmarking:**
-  - Benchmark user activity against statistical distributions (Commits, Stars, Consistency).
-- **Public Shareable Link:**
-  - Clean URL (`/u/[username]`) with dynamic OpenGraph (OG) image previews for seamless Twitter/LinkedIn unfurling.
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        GitChronicle Architecture                       │
+├────────────────────────────────────────────────────────────────────────┤
+│  Client Request ──► Next.js 15 Edge Router                             │
+│                           │                                            │
+│                           ▼                                            │
+│                  Layer 1: Memory & KV SWR Cache                        │
+│                  (6-hr Fresh TTL / 24-hr Stale tolerance)              │
+│                           │                                            │
+│                 Cache Hit? ──► Return Cached Dossier (0 API Cost)      │
+│                           │ No                                         │
+│                           ▼                                            │
+│                  Layer 2: Unified GraphQL Query                        │
+│                  (Profile + Top 50 Repos + Calendar in 1-point call)   │
+│                           │                                            │
+│                           ▼                                            │
+│                  Layer 3: Real-Time Analytics Engines                  │
+│                  ├─ Percentile Algorithm                               │
+│                  ├─ 7x24 Cadence Matrix Calculator                     │
+│                  ├─ Repo Health Auditor (0-100)                        │
+│                  └─ Language Mastery Calculator                        │
+│                           │                                            │
+│                           ▼                                            │
+│                  Dark-Mode Glassmorphic Dossier UI                     │
+└────────────────────────────────────────────────────────────────────────┘
+```
 
-### Phase 2: Deep Repo Health Audit (Days 8 - 14)
-- **Repo Health Scorecard (0 - 100):**
-  - Scored based on: Activity in last 90 days, presence of LICENSE, README quality, CI action status, open vs. closed issue velocity.
-- **Comparison Engine ("Dev vs Dev"):**
-  - Side-by-side battle / compare view between two developers with a comparative radar chart.
+### 1. Rate-Limit Immune GraphQL Engine
+Instead of executing dozens of sequential REST API queries, GitChronicle uses a single unified GraphQL query that fetches user details, pinned repositories, 365-day contribution calendar, and language distributions at a **1-point cost**.
 
----
-
-## 4. GitHub API Limit Survival Architecture (Crucial!)
-
-### The Challenge:
-- Unauthenticated limit: **60 requests/hr** per IP.
-- Authenticated PAT limit: **5,000 requests/hr**.
-- Search API limit: **30 requests/min**.
-
-### GitChronicle's 3-Layer Caching Strategy:
-1. **Smart GraphQL Single-Query Fetching:**
-   - Instead of making 10-15 REST calls per user, a single GraphQL query fetches user details, pinned repos, commit calendar, and top language distributions in **1 point cost**.
-2. **Edge Cache (Redis / Cloudflare KV / Next.js ISR):**
-   - Profile data cached with `stale-while-revalidate` (TTL: 6 hours for general profiles, 15 minutes for logged-in users).
-   - If 100 people visit `/u/ErBharatMalhotra`, only **1 API call** hits GitHub; the remaining 99 are served from edge cache.
-3. **Optional User OAuth / PAT (Token Pooling):**
-   - Allow users to "Sign In with GitHub" for extended rate limits and private repo insights.
+### 2. Edge Stale-While-Revalidate (SWR) Caching
+All developer profiles are cached at the edge with a 6-hour fresh TTL and background revalidation. Even under high traffic, redundant GitHub API calls are eliminated.
 
 ---
 
-## 5. Technology Stack
-- **Framework:** Next.js 15 (App Router) + TypeScript
-- **Styling & UI:** Tailwind CSS v4, Lucide React, Shadcn UI
-- **Visualizations:** Tremor / Recharts / Canvas Confetti / Framer Motion
-- **Caching & Storage:** Upstash Redis (Serverless KV)
-- **Deployment:** Vercel / Cloudflare Pages
+## 🏷️ Embed Your Live Badge
+
+Add your dynamic GitChronicle percentile badge directly to your GitHub Profile README:
+
+```markdown
+[![GitChronicle](https://gitchronicle.bharatdn.com/badge/YOUR_USERNAME.svg)](https://gitchronicle.bharatdn.com/u/YOUR_USERNAME)
+```
+
+Example preview:
+
+```markdown
+[![GitChronicle](https://gitchronicle.bharatdn.com/badge/ErBharatMalhotra.svg)](https://gitchronicle.bharatdn.com/u/ErBharatMalhotra)
+```
 
 ---
 
-## 6. Viral Launch Strategy
-1. **Day 1 (Reddit):** Launch on `r/webdev`, `r/SideProject`, and `r/reactjs` with title:
-   > *"I built an open-source, rate-limit-proof developer analytics dashboard to benchmark your GitHub activity."*
-2. **Day 2 (HackerNews):** "Show HN: GitChronicle – Real-time GitHub developer intelligence and percentile ranking".
-3. **Day 3 (X / Twitter):** Tag tech influencers with their auto-generated percentile cards.
-4. **README Badge:** Offer a free live SVG badge: `[![GitChronicle](https://gitchronicle.dev/badge/username.svg)](https://gitchronicle.dev/u/username)` which drives backlink traffic from thousands of user profile READMEs.
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 15 (App Router, React 19)
+- **Language:** TypeScript 5.8
+- **Styling:** Tailwind CSS v4, PostCSS, Glassmorphism
+- **Icons:** Lucide React
+- **Data Visualizations:** Recharts, Canvas Confetti
+- **GraphQL:** `@octokit/graphql`
+- **Deployment:** Vercel / Cloudflare (`gitchronicle.bharatdn.com`)
+
+---
+
+## 🚀 Getting Started Locally
+
+```bash
+# Clone repository
+git clone https://github.com/ErBharatMalhotra/gitchronicle.git
+cd gitchronicle
+
+# Install dependencies
+npm install
+
+# (Optional) Add your personal GitHub token for enhanced rate limits
+# Create .env.local:
+# GITHUB_TOKEN=ghp_your_token_here
+
+# Run development server
+npm run dev
+
+# Open http://localhost:3000
+```
+
+---
+
+## 👨‍💻 Creator & Author
+
+Crafted by **Bharat Malhotra**:
+- Website: [bharatdn.com](https://bharatdn.com)
+- GitHub: [@ErBharatMalhotra](https://github.com/ErBharatMalhotra)
+- Subdomain: [gitchronicle.bharatdn.com](https://gitchronicle.bharatdn.com)
+
+---
+
+## 📄 License
+
+This project is open-source and free under the [MIT License](LICENSE).
