@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const metadata: Metadata = {
-  title: "Dev vs Dev Comparison Matrix | GitChronicle",
+  title: "Dev vs Dev Comparison Matrix",
   description: "Compare two GitHub developers side-by-side: commit volume, global percentile ranking, repository health, and cadence rhythms.",
 };
 

@@ -24,10 +24,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const decodedUsername = decodeURIComponent(username);
 
   return {
-    title: `${decodedUsername}'s Developer Dossier & Benchmark | GitChronicle`,
+    title: `${decodedUsername}'s Developer Dossier & Benchmark`,
     description: `Inspect ${decodedUsername}'s GitHub percentile ranking, cadence rhythm matrix, repository health index, and developer DNA on GitChronicle.`,
     openGraph: {
-      title: `${decodedUsername} - Top GitHub Developer Dossier | GitChronicle`,
+      title: `${decodedUsername} - Top GitHub Developer Dossier`,
       description: `Inspect ${decodedUsername}'s GitHub percentile ranking, cadence rhythm matrix, and developer DNA on GitChronicle.`,
       url: `${BASE_URL}/u/${decodedUsername}`,
       siteName: "GitChronicle",
