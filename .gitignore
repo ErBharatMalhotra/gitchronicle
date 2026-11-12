@@ -39,8 +39,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# AGENTS.md
+# Internal working docs & prompts
+START_PROMPT.md
+EXECUTION_PLAN.md
 AGENTS.md
-
-.vercel
-.env*
