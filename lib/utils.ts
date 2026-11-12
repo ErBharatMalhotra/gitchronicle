@@ -68,5 +68,5 @@ export function getContributionColor(count: number): string {
   return "#39d353";
 }
 
-export const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL || "https://gitchronicle.bharatdn.com";
+// Canonical production domain for README embeds and social sharing
+export const BASE_URL = "https://gitchronicle.bharatdn.com";

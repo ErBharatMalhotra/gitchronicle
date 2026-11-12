@@ -57,8 +57,9 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/badge/ErBharatMalhotra.svg"
+                  href="https://gitchronicle.bharatdn.com/badge/ErBharatMalhotra.svg"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-[#58a6ff] transition-colors flex items-center gap-1.5"
                 >
                   <span>Dynamic SVG Badges</span>
