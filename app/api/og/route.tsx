@@ -3,7 +3,7 @@ import { NextRequest } from "next/server";
 import { fetchDeveloperProfile } from "@/lib/github";
 import { buildDeveloperDossier } from "@/lib/dossier";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export async function GET(request: NextRequest) {
   try {
