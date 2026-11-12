@@ -1,23 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0d1117;
-  --foreground: #e6edf3;
-  --color-border: #30363d;
-  --color-border-muted: #21262d;
-  --color-card: #161b22;
-  --color-card-muted: #0d1117;
+  --background: #090d16;
+  --foreground: #f0f6fc;
+  --color-border: rgba(48, 54, 61, 0.8);
+  --color-border-hover: rgba(88, 166, 255, 0.5);
+  --color-card: rgba(22, 27, 34, 0.85);
   --color-accent: #58a6ff;
-  --color-purple: #a371f7;
+  --color-purple: #bc8cff;
   --color-pink: #f778ba;
   --color-green: #3fb950;
-  --color-yellow: #e6b450;
-  --color-text-muted: #8b949e;
+  --color-yellow: #d29922;
 }
 
 body {
-  background-color: #0d1117;
-  color: #e6edf3;
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -25,7 +23,7 @@ body {
 }
 
 ::selection {
-  background-color: rgba(88, 166, 255, 0.3);
+  background-color: rgba(88, 166, 255, 0.35);
   color: #ffffff;
 }
 
@@ -35,60 +33,80 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0d1117;
+  background: #090d16;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #30363d;
+  background: #21262d;
   border-radius: 9999px;
+  border: 1px solid rgba(48, 54, 61, 0.5);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6e7681;
+  background: #30363d;
 }
 
-/* Custom UI helpers */
-.glass-card {
-  background: rgba(22, 27, 34, 0.85);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(48, 54, 61, 0.7);
-  border-radius: 1rem;
+/* Elite Glassmorphism & UI Design System */
+.glass-panel {
+  background: rgba(16, 22, 34, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(48, 54, 61, 0.8);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
 }
 
-.glass-card-hover {
-  background: rgba(22, 27, 34, 0.85);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(48, 54, 61, 0.7);
-  border-radius: 0.75rem;
-  transition: all 0.25s ease;
+.glass-panel-hover {
+  background: rgba(16, 22, 34, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(48, 54, 61, 0.8);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glass-card-hover:hover {
-  border-color: rgba(88, 166, 255, 0.4);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(88, 166, 255, 0.1);
-  transform: translateY(-2px);
+.glass-panel-hover:hover {
+  border-color: rgba(88, 166, 255, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(88, 166, 255, 0.15), 0 0 0 1px rgba(88, 166, 255, 0.2) inset;
+  transform: translateY(-3px);
+}
+
+.glow-pill {
+  position: relative;
+}
+
+.glow-pill::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(90deg, #58a6ff, #bc8cff, #f778ba);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(4px);
 }
 
 .repo-health-excellent {
-  background-color: rgba(63, 185, 80, 0.15);
+  background-color: rgba(63, 185, 80, 0.12);
   color: #3fb950;
   border: 1px solid rgba(63, 185, 80, 0.3);
 }
 
 .repo-health-good {
-  background-color: rgba(88, 166, 255, 0.15);
+  background-color: rgba(88, 166, 255, 0.12);
   color: #58a6ff;
   border: 1px solid rgba(88, 166, 255, 0.3);
 }
 
 .repo-health-fair {
-  background-color: rgba(210, 153, 34, 0.15);
+  background-color: rgba(210, 153, 34, 0.12);
   color: #d29922;
   border: 1px solid rgba(210, 153, 34, 0.3);
 }
 
 .repo-health-poor {
-  background-color: rgba(248, 81, 73, 0.15);
+  background-color: rgba(248, 81, 73, 0.12);
   color: #f85149;
   border: 1px solid rgba(248, 81, 73, 0.3);
 }
