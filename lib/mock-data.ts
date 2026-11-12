@@ -1,59 +1,29 @@
 import { GitHubUser } from "./types";
 
 /**
- * Realistic Mock Profiles for fallback and demonstration
+ * Realistic Mock Profile Generator for fallback and demonstration
  * Ensures GitChronicle is 100% resilient and rate-limit immune
  */
 
 export function generateMockProfile(login: string): GitHubUser {
   const normalized = login.toLowerCase();
-
   const isBharat = normalized === "erbharatmalhotra" || normalized === "bharat";
-  const isShadcn = normalized === "shadcn";
-  const isLeeRob = normalized === "leerob";
-  const isTorvalds = normalized === "torvalds";
 
-  const name = isBharat
-    ? "Bharat Malhotra"
-    : isShadcn
-    ? "shadcn"
-    : isLeeRob
-    ? "Lee Robinson"
-    : isTorvalds
-    ? "Linus Torvalds"
-    : login;
+  const name = isBharat ? "Bharat Malhotra" : login;
 
   const bio = isBharat
     ? "Full-stack engineer & open-source architect. Building GitChronicle, cloud-native platforms, and developer tooling."
-    : isShadcn
-    ? "Design systems & UI engineer. Creator of shadcn/ui. Building accessible, customizable components."
-    : isLeeRob
-    ? "VP of Developer Experience. Building the future of the web with Next.js, React, and server-driven architectures."
-    : isTorvalds
-    ? "Creator of Linux and Git. Finnish-American software engineer."
-    : `Passionate software engineer and open-source enthusiast crafting software at ${login}.`;
+    : `Software engineer and open-source contributor crafting robust tools and modern web systems.`;
 
   const totalStars = isBharat
     ? 1420
-    : isShadcn
-    ? 89400
-    : isLeeRob
-    ? 12500
-    : isTorvalds
-    ? 198000
-    : Math.floor(Math.abs(hash(login) % 650) + 120);
+    : Math.floor(Math.abs(hash(login) % 1800) + 180);
 
   const totalContributions = isBharat
     ? 2480
-    : isShadcn
-    ? 4230
-    : isLeeRob
-    ? 1890
-    : isTorvalds
-    ? 3890
-    : Math.floor(Math.abs(hash(login) % 1800) + 250);
+    : Math.floor(Math.abs(hash(login) % 2200) + 380);
 
-  const primaryLang = isTorvalds ? "C" : isShadcn ? "TypeScript" : isBharat ? "TypeScript" : "TypeScript";
+  const primaryLang = isBharat ? "TypeScript" : "TypeScript";
 
   // Build calendar weeks
   const weeks = [];
@@ -82,7 +52,16 @@ export function generateMockProfile(login: string): GitHubUser {
         date: dateStr,
         contributionCount: count,
         weekday: d,
-        color: count === 0 ? "#161b22" : count < 4 ? "#0e4429" : count < 8 ? "#006d32" : count < 12 ? "#26a641" : "#39d353",
+        color:
+          count === 0
+            ? "#161b22"
+            : count < 4
+            ? "#0e4429"
+            : count < 8
+            ? "#006d32"
+            : count < 12
+            ? "#26a641"
+            : "#39d353",
       });
     }
     weeks.push({ contributionDays: days });
@@ -93,21 +72,21 @@ export function generateMockProfile(login: string): GitHubUser {
     name,
     avatarUrl: `https://avatars.githubusercontent.com/${login}?v=4`,
     bio,
-    company: isBharat ? "@BharatDN" : isLeeRob ? "@Vercel" : isTorvalds ? "Linux Foundation" : null,
-    location: isBharat ? "Delhi, India" : isLeeRob ? "San Francisco, CA" : isTorvalds ? "Portland, OR" : "Global",
-    twitterUsername: isBharat ? "ErBharatMalhotra" : isShadcn ? "shadcn" : isLeeRob ? "leeerob" : null,
-    websiteUrl: isBharat ? "https://gitchronicle.bharatdn.com" : isLeeRob ? "https://leerob.io" : null,
-    createdAt: isTorvalds ? "2011-09-03T00:00:00Z" : "2018-04-15T12:00:00Z",
-    followers: { totalCount: Math.floor(totalStars * 1.8 + 420) },
-    following: { totalCount: 142 },
+    company: isBharat ? "@BharatDN" : null,
+    location: isBharat ? "Delhi, India" : "Global",
+    twitterUsername: isBharat ? "ErBharatMalhotra" : null,
+    websiteUrl: isBharat ? "https://gitchronicle.bharatdn.com" : null,
+    createdAt: isBharat ? "2018-04-15T12:00:00Z" : "2020-01-10T10:00:00Z",
+    followers: { totalCount: Math.floor(totalStars * 1.5 + 280) },
+    following: { totalCount: 94 },
     repositories: {
       nodes: [
         {
-          name: isBharat ? "GitChronicle" : isShadcn ? "ui" : isTorvalds ? "linux" : "next-saas-starter",
+          name: isBharat ? "GitChronicle" : `${login}-core`,
           description: isBharat
             ? "Real-Time Developer Intelligence & Percentile Benchmark Dashboard."
-            : "Beautifully designed components that you can copy and paste into your apps.",
-          url: `https://github.com/${login}/repo1`,
+            : "Production-ready developer observatory, utilities, and high-performance algorithms.",
+          url: `https://github.com/${login}/${isBharat ? "GitChronicle" : "core"}`,
           stargazerCount: Math.floor(totalStars * 0.65),
           forkCount: Math.floor(totalStars * 0.18),
           primaryLanguage: { name: primaryLang, color: "#3178c6" },
@@ -120,8 +99,8 @@ export function generateMockProfile(login: string): GitHubUser {
           },
           hasIssuesEnabled: true,
           licenseInfo: { spdxId: "MIT", name: "MIT License" },
-          openIssues: { totalCount: 14 },
-          closedIssues: { totalCount: 182 },
+          openIssues: { totalCount: 12 },
+          closedIssues: { totalCount: 168 },
           pushedAt: new Date(Date.now() - 2 * dayMs).toISOString(),
           updatedAt: new Date(Date.now() - 1 * dayMs).toISOString(),
           isArchived: false,
@@ -138,9 +117,11 @@ export function generateMockProfile(login: string): GitHubUser {
           },
         },
         {
-          name: isBharat ? "cloud-agentic-pipeline" : "turbopack-starter",
-          description: "Production-grade autonomous agent and continuous evaluation orchestration pipeline.",
-          url: `https://github.com/${login}/repo2`,
+          name: isBharat ? "cloud-agentic-pipeline" : `${login}-toolkit`,
+          description: isBharat
+            ? "Production-grade autonomous agent and continuous evaluation orchestration pipeline."
+            : "Developer tooling, analytics benchmarks, and automated pipelines.",
+          url: `https://github.com/${login}/${isBharat ? "cloud-agentic-pipeline" : "toolkit"}`,
           stargazerCount: Math.floor(totalStars * 0.22),
           forkCount: Math.floor(totalStars * 0.05),
           primaryLanguage: { name: "TypeScript", color: "#3178c6" },
@@ -159,9 +140,9 @@ export function generateMockProfile(login: string): GitHubUser {
           isArchived: false,
         },
         {
-          name: "developer-benchmarks",
+          name: isBharat ? "developer-benchmarks" : `${login}-analytics`,
           description: "High-performance statistics and benchmark engines for developer performance analysis.",
-          url: `https://github.com/${login}/repo3`,
+          url: `https://github.com/${login}/${isBharat ? "developer-benchmarks" : "analytics"}`,
           stargazerCount: Math.floor(totalStars * 0.13),
           forkCount: Math.floor(totalStars * 0.02),
           primaryLanguage: { name: "Go", color: "#00ADD8" },

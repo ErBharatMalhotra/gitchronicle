@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { Heart, Github, ExternalLink, ShieldCheck, Zap } from "lucide-react";
+import { Github, ExternalLink, ShieldCheck, Zap, Sparkles, Terminal, Code2 } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-[#30363d] bg-[#0d1117] mt-24">
+    <footer className="w-full border-t border-[#30363d]/80 bg-[#090d16] mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Col */}
@@ -31,36 +31,39 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Product & Navigation */}
           <div>
             <h4 className="text-xs font-semibold text-[#e6edf3] uppercase tracking-wider mb-3">
-              Explore Benchmarks
+              Platform
             </h4>
             <ul className="space-y-2 text-xs text-[#8b949e]">
               <li>
-                <Link href="/u/ErBharatMalhotra" className="hover:text-[#58a6ff] transition-colors">
-                  Bharat Malhotra (Creator)
+                <Link href="/" className="hover:text-[#58a6ff] transition-colors flex items-center gap-1.5">
+                  <Terminal className="h-3.5 w-3.5 text-[#58a6ff]" />
+                  <span>Analyze Any Profile</span>
                 </Link>
               </li>
               <li>
-                <Link href="/u/shadcn" className="hover:text-[#58a6ff] transition-colors">
-                  shadcn
+                <Link href="/u/ErBharatMalhotra" className="hover:text-[#58a6ff] transition-colors flex items-center gap-1.5">
+                  <Sparkles className="h-3.5 w-3.5 text-[#ffd700]" />
+                  <span>Creator Dossier</span>
                 </Link>
               </li>
               <li>
-                <Link href="/u/leerob" className="hover:text-[#58a6ff] transition-colors">
-                  Lee Robinson
+                <Link href="/compare" className="hover:text-[#58a6ff] transition-colors flex items-center gap-1.5">
+                  <Code2 className="h-3.5 w-3.5 text-[#bc8cff]" />
+                  <span>Dev vs Dev Comparison</span>
                 </Link>
               </li>
               <li>
-                <Link href="/u/torvalds" className="hover:text-[#58a6ff] transition-colors">
-                  Linus Torvalds
-                </Link>
-              </li>
-              <li>
-                <Link href="/compare" className="hover:text-[#58a6ff] transition-colors">
-                  Dev vs Dev Comparison
-                </Link>
+                <a
+                  href="/badge/ErBharatMalhotra.svg"
+                  target="_blank"
+                  className="hover:text-[#58a6ff] transition-colors flex items-center gap-1.5"
+                >
+                  <span>Dynamic SVG Badges</span>
+                  <ExternalLink className="h-3 w-3" />
+                </a>
               </li>
             </ul>
           </div>
@@ -68,7 +71,7 @@ export function Footer() {
           {/* Architecture Specs */}
           <div>
             <h4 className="text-xs font-semibold text-[#e6edf3] uppercase tracking-wider mb-3">
-              Architecture & API
+              Architecture & Source
             </h4>
             <ul className="space-y-2 text-xs text-[#8b949e]">
               <li className="flex items-center gap-1.5">
@@ -81,22 +84,24 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/badge/ErBharatMalhotra.svg"
+                  href="https://github.com/ErBharatMalhotra/gitchronicle"
                   target="_blank"
-                  className="hover:text-[#58a6ff] transition-colors flex items-center gap-1"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#58a6ff] transition-colors flex items-center gap-1.5"
                 >
-                  <span>Dynamic SVG Badges</span>
+                  <Github className="h-3.5 w-3.5" />
+                  <span>GitHub Repository</span>
                   <ExternalLink className="h-3 w-3" />
                 </a>
               </li>
               <li>
                 <a
-                  href="https://github.com/ErBharatMalhotra/GitChronicle"
+                  href="https://bharatdn.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#58a6ff] transition-colors flex items-center gap-1"
+                  className="hover:text-[#58a6ff] transition-colors flex items-center gap-1.5"
                 >
-                  <span>GitHub Repository</span>
+                  <span>Bharat Malhotra (Author)</span>
                   <ExternalLink className="h-3 w-3" />
                 </a>
               </li>

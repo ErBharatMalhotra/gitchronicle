@@ -22,23 +22,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/u/shadcn`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/u/leerob`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/u/torvalds`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.7,
-    },
   ];
 }
