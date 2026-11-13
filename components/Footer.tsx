@@ -66,6 +66,17 @@ export function Footer() {
                   <ExternalLink className="h-3 w-3" />
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://readme.bharatdn.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#10b981] transition-colors flex items-center gap-1.5"
+                >
+                  <Code2 className="h-3.5 w-3.5 text-[#10b981]" />
+                  <span>Craft your README</span>
+                </a>
+              </li>
             </ul>
           </div>
 
