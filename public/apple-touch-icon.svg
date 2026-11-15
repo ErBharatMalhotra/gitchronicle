@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180" role="img" aria-label="GitChronicle">
+  <rect width="180" height="180" rx="36" fill="#090d16"/>
+  <rect x="1" y="1" width="178" height="178" rx="35" fill="none" stroke="url(#b)" stroke-width="2"/>
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="180" y2="180">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(90, 90)">
+    <circle r="32" fill="none" stroke="url(#b)" stroke-width="4" stroke-dasharray="201" stroke-dashoffset="5" stroke-linecap="round"/>
+    <path d="M -28 0 Q -20 -10 -10 0 T 10 0 T 28 0" fill="none" stroke="url(#b)" stroke-width="3" stroke-linecap="round"/>
+    <circle r="12" fill="#090d16" stroke="url(#b)" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="10" fill="url(#b)">99</text>
+  </g>
+</svg>

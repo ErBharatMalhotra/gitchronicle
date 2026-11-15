@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Search, Github, GitFork, Sparkles, BarChart3, Users } from "lucide-react";
+import { Search, Github, GitFork, Sparkles, BarChart3, Users, CodeXml } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export function Header() {
@@ -67,7 +67,7 @@ export function Header() {
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[#c9d1d9] hover:text-[#10b981] bg-[#161b22] hover:bg-[#10b981]/10 border border-[#30363d] hover:border-[#10b981]/30 rounded-lg transition-colors"
           >
-            <Code2 className="h-3.5 w-3.5 text-[#10b981]" />
+            <CodeXml className="h-3.5 w-3.5 text-[#10b981]" />
             <span className="hidden sm:inline">Craft README</span>
           </a>
 

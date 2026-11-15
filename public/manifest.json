@@ -1,0 +1,59 @@
+{
+  "name": "GitChronicle",
+  "short_name": "GitChronicle",
+  "description": "Real-Time Developer Intelligence & Percentile Benchmark Observatory",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#f59e0b",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon-gitchronicle.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-gitchronicle.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-gitchronicle.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["developer", "analytics", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Analyze Developer",
+      "short_name": "Analyze",
+      "description": "View global percentile benchmark for a GitHub user",
+      "url": "/u/ErBharatMalhotra",
+      "icons": [{ "src": "/icon-gitchronicle.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Compare Developers",
+      "short_name": "Compare",
+      "description": "Side-by-side developer intelligence comparison",
+      "url": "/compare",
+      "icons": [{ "src": "/icon-gitchronicle.svg", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://githolo.bharatdn.com"
+    },
+    {
+      "platform": "web",
+      "url": "https://readme.bharatdn.com"
+    }
+  ],
+  "prefer_related_applications": false
+}
