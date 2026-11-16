@@ -43,3 +43,9 @@ next-env.d.ts
 START_PROMPT.md
 EXECUTION_PLAN.md
 AGENTS.md
+
+# AI Documentation (private, for AI context only)
+AI_DOCUMENTATION.md
+PROJECT_CONTEXT.md
+*.ai.md
+*.context.md
